@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 
 public class HomeController {
+    int num;
+    public HomeController(){
+        int num = 0;
+    }
     @GetMapping("/home/main")
     @ResponseBody
     public String showHome(){
@@ -25,6 +29,14 @@ public class HomeController {
 
     public String showHome3(){
         return "스트링부트는 획기적이다";
+    }
+
+    @GetMapping("/home/increase")
+    @ResponseBody
+
+    public int showIncrease(){
+        num++;
+        return num;
     }
 
 }
